@@ -1,0 +1,69 @@
+import java.util.Scanner;
+
+
+
+public class PrincipalArquivo {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+
+		String nome = "";
+		String fone = "";
+		String linha = " ";
+		char opcao;
+		Arquivo arq = new Arquivo();
+
+		Scanner ler = new Scanner(System.in);
+
+		do {
+//Menu de Opçoes de inicio da agenda
+			System.out.println("Informe a opção desejada:"
+					+ "\n 1- Gravar dados no arquivo"
+					+ "\n 2- Ler dados do arquivo" + "\n 3- Sair ");
+			opcao = ler.next().charAt(0); // le a linha digitada e pega o primeiro caractere
+
+			switch (opcao) {
+
+			case '1':
+				System.out.println("Digite o nome");
+				nome = ler.nextLine();
+
+				System.out.println("Digite o fone");
+				fone = ler.nextLine();
+
+				arq.abreArquivoW();
+				arq.gravaArquivo(nome, fone);
+				arq.fechaArquivoW();
+				break;
+
+			case '2':
+				arq.abreArquivoR();
+
+				while (linha != null) {
+					try {
+
+						linha = arq.lerArquivo();
+						// JOptionPane.showMessageDialog(null, linha);
+						System.out.println(linha);
+
+					} catch (IOException i) {
+						// JOptionPane.showMessageDialog(null, i.getMessage());
+						System.out.println(i.getMessage());
+						break;
+					}
+				}
+				break;
+
+			case '3':
+				// JOptionPane.showMessageDialog(null, "Fim programa");
+				System.out.println("::::::FIM DO APLICATIVO::::::");
+
+			}
+
+		} while (opcao != '3');
+
+	}
+}
