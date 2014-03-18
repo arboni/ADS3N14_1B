@@ -1,0 +1,40 @@
+public class Arquivo {
+
+	FileWriter arquivoW ;
+	PrintWriter gravaArquivo ;
+	FileReader arquivoR;
+	BufferedReader lerArquivo;
+	
+	public void abreArquivoW() throws IOException{
+		arquivoW = new FileWriter("ContatosAgenda.txt",true);
+		gravaArquivo = new PrintWriter (arquivoW);
+	}
+	
+	public void abreArquivoR() throws IOException{
+		arquivoR = new FileReader ("ContatosAgenda.txt");
+		lerArquivo = new BufferedReader(arquivoR);
+	}
+	
+	
+	public void gravaArquivo(String nome, String fone){
+		
+		gravaArquivo.println(nome + "; "+fone);
+	}
+	
+	public String lerArquivo() throws IOException{
+		String linha = lerArquivo.readLine();
+		if (linha == null){
+			throw new IOException("Fim Arquivo");
+		}else{
+		return linha;
+		}
+	}
+	
+	public void fechaArquivoW(){
+		gravaArquivo.close();
+	}
+	
+	public void fechaArquivoR() throws IOException{
+		lerArquivo.close();
+	}
+}
