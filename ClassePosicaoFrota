@@ -1,0 +1,39 @@
+package modelo;
+
+import java.util.ArrayList;
+
+public class PosicaoFrota extends Arsenal{
+	private ArrayList<String> posicao = new ArrayList<String>();
+	private int cont;
+
+
+	public PosicaoFrota(String nome, int tamanho)
+	{
+		super(nome, tamanho);
+		this.cont = 0;
+	}
+	
+	public int getContador() {
+		return cont;
+	}
+
+	public void setContador(int contador) {
+		this.cont = contador;
+	}
+	
+	public ArrayList<String> getcolocaCoordenada() {
+		return posicao;
+	}
+
+	public void setcolocaCoordenada(ArrayList<String> colocaCoordenada) {
+		this.posicao = colocaCoordenada;
+	}
+	
+	public void addcolocaCoordenada(String coord)
+	{
+		this.posicao.add(coord);
+	}
+	
+
+}
+
