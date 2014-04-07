@@ -1,0 +1,13 @@
+package aplicacao;
+
+import controlador.*;
+
+public class AppBatalhaNaval {
+	
+	public static void main(String[] args) {
+		
+		// instancia a clase controller e inicializa o jogo mostrando o Tabuleiro!
+		Controller c = new Controller();
+		c.mostraTabela();
+	}
+}
