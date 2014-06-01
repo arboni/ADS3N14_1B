@@ -1,0 +1,18 @@
+package app;
+
+/**
+*
+* @author  Arboni
+*/
+import controller.ListaTelefonicaController;
+
+public class ListaTelefonicaArvoreBinaria {
+
+	public static void main(String[] args) {
+	/*constutor da classe ListaTelefonica que cria o objeto objController onde inicia 
+		o menu e o processo de leitura da lista*/
+		ListaTelefonicaController objController = new ListaTelefonicaController();
+		objController.start();
+	}
+
+}
